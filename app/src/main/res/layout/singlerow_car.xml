@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:elevation="40dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C4C4C4">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/car" />
+
+        <RelativeLayout
+            android:id="@+id/carDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            >
+                <TextView
+                    android:id="@+id/year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2011"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/make"
+                    android:layout_width="wrap_content"
+                    android:layout_toRightOf="@+id/year"
+                    android:layout_height="wrap_content"
+                    android:text="BMW"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="5dp"/>
+                <TextView
+                    android:id="@+id/model"
+                    android:layout_width="wrap_content"
+                    android:layout_toRightOf="@+id/make"
+                    android:layout_height="wrap_content"
+                    android:text="3 Series"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="5dp"/>
+                <TextView
+                    android:id="@+id/trim"
+                    android:layout_width="wrap_content"
+                    android:layout_toRightOf="@+id/model"
+                    android:layout_height="wrap_content"
+                    android:text="328i"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="5dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/carPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carDetails"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 17,234"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/mileage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="39.1k mi"
+                android:textSize="14dp"
+                android:layout_toRightOf="@+id/price"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/carAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carPrice"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp">
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HighLand Park, "
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IL"
+                android:layout_toRightOf="@+id/city"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="5dp"
+                />
+        </RelativeLayout>
+        <View
+            android:id="@+id/line"
+            android:layout_below="@+id/carAddress"
+            android:layout_width="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
+        <Button
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
+            android:backgroundTint="@color/white"
+            android:text="CALL DEALER"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/teal_200"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
