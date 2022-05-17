@@ -39,12 +39,13 @@ public class DetailsActivity extends AppCompatActivity {
         engine = findViewById(R.id.engine);
         phoneCall = findViewById(R.id.call);
 
+        location.setText(getIntent().getStringExtra("city") +", " + getIntent().getStringExtra("state"));
         year.setText(getIntent().getStringExtra("year"));
         make.setText(getIntent().getStringExtra("make"));
         model.setText(getIntent().getStringExtra("model"));
         trim.setText(getIntent().getStringExtra("trim"));
-        price.setText(getIntent().getStringExtra("price"));
-        mileage.setText(getIntent().getStringExtra("mileage"));
+        price.setText("$ " + getIntent().getStringExtra("price") + " | ");
+        mileage.setText(getIntent().getStringExtra("mileage") + " mi");
         exColor.setText(getIntent().getStringExtra("exColor"));
         inColor.setText(getIntent().getStringExtra("intColor"));
         driveType.setText(getIntent().getStringExtra("driveType"));

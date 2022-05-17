@@ -18,6 +18,70 @@ public class CarModel {
      @ColumnInfo(name = "state") private String state;
      @ColumnInfo(name = "number") private String number;
      @ColumnInfo(name = "uniqueID") private String uid;
+     @ColumnInfo(name = "exteriorColor") private String exColor;
+     @ColumnInfo(name = "interiorColor") private String inColor;
+     @ColumnInfo(name = "driveType") private String driveType;
+     @ColumnInfo(name = "bodyStyle") private String bodyStyle;
+     @ColumnInfo(name = "engine") private String engine;
+     @ColumnInfo(name = "fuel") private String fuel;
+     @ColumnInfo(name = "transmission") private String transmission;
+
+
+     public String getExColor() {
+          return exColor;
+     }
+
+     public void setExColor(String exColor) {
+          this.exColor = exColor;
+     }
+
+     public String getInColor() {
+          return inColor;
+     }
+
+     public void setInColor(String inColor) {
+          this.inColor = inColor;
+     }
+
+     public String getDriveType() {
+          return driveType;
+     }
+
+     public void setDriveType(String driveType) {
+          this.driveType = driveType;
+     }
+
+     public String getBodyStyle() {
+          return bodyStyle;
+     }
+
+     public void setBodyStyle(String bodyStyle) {
+          this.bodyStyle = bodyStyle;
+     }
+
+     public String getEngine() {
+          return engine;
+     }
+
+     public void setEngine(String engine) {
+          this.engine = engine;
+     }
+
+     public String getFuel() {
+          return fuel;
+     }
+
+     public void setFuel(String fuel) {
+          this.fuel = fuel;
+     }
+
+     public String getTransmission() {
+          return transmission;
+     }
+
+     public void setTransmission(String transmission) {
+          this.transmission = transmission;
+     }
 
      public String getUid() {
           return uid;

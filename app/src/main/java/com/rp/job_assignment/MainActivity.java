@@ -67,32 +67,6 @@ public class MainActivity extends AppCompatActivity {
         adapter = new myAdapter(userArrayList, MainActivity.this);
         rcv.setAdapter(adapter);
 
-        Observable<Car> carObservable = Observable.fromIterable(userArrayList)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
-
-        carObservable.subscribe(new Observer<Car>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-
-            }
-
-            @Override
-            public void onNext(@NonNull Car car) {
-
-            }
-
-            @Override
-            public void onError(@NonNull Throwable e) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
-            }
-        });
-
 
     }
 
@@ -115,6 +89,15 @@ public class MainActivity extends AppCompatActivity {
             String state =carList.get(i).getState();
             String phoneNumber = carList.get(i).getNumber();
             String id = carList.get(i).getUid();
+            String exColor =carList.get(i).getExColor();
+            String inColor =carList.get(i).getInColor();
+            String transmission =carList.get(i).getTransmission();
+            String driveType =carList.get(i).getDriveType();
+            String bodyType =carList.get(i).getBodyStyle();
+            String engine =carList.get(i).getEngine();
+            String fuel =carList.get(i).getFuel();
+
+
             car.setUrl(url);
             car.setYear(year);
             car.setMake(make);
@@ -125,6 +108,13 @@ public class MainActivity extends AppCompatActivity {
             car.setCity(city);
             car.setState(state);
             car.setPhoneNumber(phoneNumber);
+            car.setExColor(exColor);
+            car.setInColor(inColor);
+            car.setTransmission(transmission);
+            car.setDriveType(driveType);
+            car.setBodyStyle(bodyType);
+            car.setEngine(engine);
+            car.setFuel(fuel);
             userArrayList.add(car);
         }
         adapter.notifyDataSetChanged();
@@ -161,9 +151,10 @@ public class MainActivity extends AppCompatActivity {
                                 String inColor = carDetails.getString("interiorColor");
                                 String driveType = carDetails.getString("drivetype");
                                 String transmission = carDetails.getString("transmission");
-                                String bodyStyle = carDetails.getString("drivetype");
+                                String bodyStyle = carDetails.getString("bodytype");
                                 String engine = carDetails.getString("engine");
                                 String fuel = carDetails.getString("fuel");
+
                                 String id = carDetails.getString("id");
                                 Car car = new Car();
                                     car.setUrl(url);
@@ -187,7 +178,8 @@ public class MainActivity extends AppCompatActivity {
                                 userArrayList.add(car);
                                 CarDatabase db= CarDatabase.getDbInstance(getApplicationContext());
                                 if(db.carDao().getID(id) != id) {
-                                    addNewCar(url, year, make, model, trim, price, mileage, city, state, phoneNumber, id);
+                                    addNewCar(url, year, make, model, trim, price, mileage, city, state, phoneNumber, id
+                                              ,exColor,inColor,driveType,transmission,bodyStyle,engine,fuel);
                                 }
                             }
                             adapter.notifyDataSetChanged();
@@ -205,8 +197,7 @@ public class MainActivity extends AppCompatActivity {
         mQueue.add(request);
     }
 
-    private void addNewCar(String url, String year, String make, String model, String trim, String price, String mileage, String city, String state, String phoneNumber,String id){
-
+    private void addNewCar(String url, String year, String make, String model, String trim, String price, String mileage, String city, String state, String phoneNumber, String id, String exColor, String inColor, String driveType, String transmission, String bodyStyle, String engine, String fuel) {
         CarDatabase db= CarDatabase.getDbInstance(this.getApplicationContext());
 
         CarModel car = new CarModel();
@@ -221,6 +212,15 @@ public class MainActivity extends AppCompatActivity {
         car.setState(state);
         car.setNumber(phoneNumber);
         car.setUid(id);
+        car.setExColor(exColor);
+        car.setInColor(inColor);
+        car.setDriveType(driveType);
+        car.setTransmission(transmission);
+        car.setEngine(engine);
+        car.setFuel(fuel);
+        car.setBodyStyle(bodyStyle);
         db.carDao().insertCar(car);
-     }
+    }
+
+
 }
