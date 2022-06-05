@@ -1,4 +1,4 @@
-package com.rp.job_assignment;
+package com.rp.job_assignment.Models;
 
 public class Car {
      private String year;

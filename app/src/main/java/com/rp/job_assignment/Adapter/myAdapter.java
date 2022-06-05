@@ -15,19 +15,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.rp.job_assignment.Car;
+import com.rp.job_assignment.Models.Car;
 import com.rp.job_assignment.DetailsActivity;
 import com.rp.job_assignment.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class myAdapter extends RecyclerView.Adapter<myViewHolder> {
 
-    ArrayList<Car> data;
+    List<Car> data;
     Context context;
 
-    public myAdapter(ArrayList<Car> data, Context context) {
+    public myAdapter(List<Car> data, Context context) {
         this.data = data;
         this.context =context;
     }
@@ -70,7 +71,6 @@ public class myAdapter extends RecyclerView.Adapter<myViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Hello", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, DetailsActivity.class);
                 intent.putExtra("url", temp.getUrl() );
                 intent.putExtra("year",temp.getYear());

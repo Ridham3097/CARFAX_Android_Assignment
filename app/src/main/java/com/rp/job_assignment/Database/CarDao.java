@@ -13,7 +13,7 @@ public interface CarDao {
     @Query("SELECT * FROM carmodel")
     List<CarModel> getAllCars();
 
-    @Query("SELECT uniqueID FROM Carmodel WHERE uniqueID= :num")
+    @Query("SELECT uniqueID FROM Carmodel WHERE uniqueID= :num ")
     String getID(String num);
 
     @Insert
